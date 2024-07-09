@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{.Artist.Name}} - Groupie Trackers</title>
+    <link rel="stylesheet" href="../static/css/artist-style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="http://localhost:8080/">Groupie Trackers</a></h1>
+    </header>
+
+    <main>
+        <section id="artist-details">
+            <div class="artist-image">
+                <h2>{{.Artist.Name}}</h2>
+                <img src="{{.Artist.Image}}" alt="{{.Artist.Name}}">
+            </div>
+            <div class="artist-info">
+                <h3>Members:</h3>
+                <ul>
+                    {{range .Artist.Members}}
+                        <li>{{.}}</li>
+                    {{end}}
+                </ul>
+
+                <h3>Creation date:</h3>
+                <p>{{.Artist.CreationDate}}</p>
+
+                <h3>First album:</h3>
+                <p>{{.Artist.FirstAlbum}}</p>
+            </div>
+
+            <section id="concerts">
+                <h3>Locations:</h3>
+                <ul>
+                    {{range .Artist.LocationsData}}
+                        <li>{{.City}}</li>
+                    {{end}}
+                </ul>
+            </section>
+    
+            <section id="dates">
+                <h3>Dates:</h3>
+                <ul>
+                    {{range .Artist.DatesData}}
+                        <li>{{.DateTime}}</li>
+                    {{end}}
+                </ul>
+            </section>
+    
+            <section id="relations">
+                <h3>Relations:</h3>
+                <ul>
+                    {{range $date, $locations := .Artist.RelationsData.DatesLocations}}
+                        {{range $location := $locations}}
+                            <li>{{ $location }} - {{ $date }}</li>
+                        {{end}}
+                    {{end}}
+                </ul>
+            </section>
+        </section>
+
+     
+    </main>
+
+    <footer>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Groupie Trackers</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Groupie Trackers</h1>
+    </header>
+
+    <main>
+        <section id="artists">
+            <ul id="artistsList">
+                {{range .Artists}}
+                    <li>
+                        <a href="/artist/{{.ID}}"> 
+                            {{if .Image}}
+                                <img src="{{.Image}}" alt="{{.Name}}" />
+                            {{end}}
+                            <p>{{.Name}}</p> 
+                        </a>
+                    </li>
+                {{end}}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        </footer>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

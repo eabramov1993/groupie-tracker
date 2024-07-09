@@ -1,0 +1,71 @@
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Выбираем читабельный шрифт */
+    line-height: 1.6; /* Улучшаем читаемость текста */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Светлый фон */
+    color: #333; /* Темный цвет текста для контраста */
+}
+
+header {
+    background-color: #292929; /* Темный фон для заголовка */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+h1 {
+    margin: 0.5rem 0;
+}
+
+main {
+    padding: 2rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Стили для списка артистов */
+#artistsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Адаптивность */
+    gap: 1.5rem; /* Расстояние между карточками */
+}
+
+#artistsList li {
+    background-color: white;
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для придания объема */
+    overflow: hidden; /* Скрываем вылезающие элементы */
+    transition: transform 0.3s ease; /* Добавляем плавный переход */
+}
+#artistsList li:hover {
+    transform: scale(1.1); /* Увеличиваем размер при наведении на 10% */
+  }
+
+#artistsList li a {
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    color: inherit; /* Наследуем цвет от родителя */
+}
+
+#artistsList li img {
+    width: 100%; /* Изображение на всю ширину карточки */
+    height: 200px; /* Фиксированная высота изображения */
+    object-fit: cover; /* Обрезаем изображение, чтобы оно заполнило контейнер */
+}
+
+#artistsList li p {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+/* Стили для футера (по желанию) */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #eee;
+}
